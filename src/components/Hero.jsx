@@ -7,12 +7,19 @@ export default function Hero() {
     <section className="container mx-auto px-6 py-20">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         <div className="lg:w-1/2">
-          <h1 className="text-5xl md:text-6xl font-extralight leading-tight text-gray-900">
-            <span className="block">
-              <Typewriter words={["Frictionless", "Data-driven", "Fictionless"]} />
-              <span className="ml-2">Influencer</span>
+          <h1 className="text-4xl md:text-5xl font-light leading-tight text-gray-900">
+            <span className="inline-block relative">
+              <span className="relative z-10">
+                <Typewriter words={["Frictionless", "Data-driven", "Fictionless"]} />
+                <span className="ml-2">Influencer</span>
+              </span>
+              <span className="absolute left-0 bottom-0 z-0 w-40 h-3 rounded-sm bg-gradient-to-r from-yellow-300 to-orange-400" style={{transform: 'translateY(12px)'}} aria-hidden />
             </span>
-            <span className="block">Marketing at Scale</span>
+
+            <span className="inline-block relative">
+              <span className="relative z-10">Marketing at Scale</span>
+              <span className="absolute left-0 bottom-0 z-0 w-36 h-3 rounded-sm bg-gradient-to-r from-yellow-300 to-orange-400" style={{transform: 'translateY(12px)'}} aria-hidden />
+            </span>
           </h1>
           <p className="mt-6 text-gray-600 text-lg">Generate word of mouth on social media in minutes!</p>
 
