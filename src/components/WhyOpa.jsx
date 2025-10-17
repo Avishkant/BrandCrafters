@@ -1,9 +1,48 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import why from '../assets/why-opa_uvwrqx.png'
+import dropImg from '../assets/diamond_jwp0xg.png'
+import Bubble from './Bubble'
 
 export default function WhyOpa(){
+  const dropRef = useRef(null)
+
+  useEffect(() => {
+    let rafId = null
+    let lastY = window.scrollY
+
+    const handle = () => {
+      const currentY = window.scrollY
+      // small factor for slow movement (parallax)
+      const offset = currentY * 0.15
+      if (dropRef.current) {
+        dropRef.current.style.transform = `translateY(${offset}px)`
+      }
+      rafId = null
+    }
+
+    const onScroll = () => {
+      if (rafId == null) rafId = requestAnimationFrame(handle)
+      lastY = window.scrollY
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
+  }, [])
+
   return (
-    <section className="container mx-auto px-6 py-20">
+    <section className="container mx-auto px-6 py-20 relative overflow-visible">
+      {/* large background bubble (SVG) */}
+      <div className="pointer-events-none absolute -left-20 -top-12 opacity-40 w-2/3 transform -rotate-6 -z-10">
+        <Bubble />
+      </div>
+
+      {/* floating decorative drop (parallax on scroll) */}
+      <img ref={dropRef} src={dropImg} alt="decorative-drop" className="pointer-events-none absolute left-8 top-8 w-12 opacity-80 transform transition-transform duration-200" />
+
       <div className="text-center mb-8">
         <h2 className="text-3xl font-semibold text-gray-800">Why
           <span className="block">OPA</span>
