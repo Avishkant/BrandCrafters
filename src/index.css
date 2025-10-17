@@ -7,3 +7,15 @@ html, body, #root {
 body {
 	margin: 0;
 }
+
+/* simple blink for the typewriter cursor */
+.animate-blink {
+	display: inline-block;
+	width: 1ch;
+	text-align: left;
+	animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+	to { visibility: hidden; }
+}

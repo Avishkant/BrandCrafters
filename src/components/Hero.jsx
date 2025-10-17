@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import Typewriter from './Typewriter'
 
 export default function Hero() {
   return (
@@ -7,7 +8,10 @@ export default function Hero() {
       <div className="flex flex-col lg:flex-row items-center gap-12">
         <div className="lg:w-1/2">
           <h1 className="text-5xl md:text-6xl font-extralight leading-tight text-gray-900">
-            <span className="block">Frictionless Influencer</span>
+            <span className="block">
+              <Typewriter words={["Frictionless", "Data-driven", "Fictionless"]} />
+              <span className="ml-2">Influencer</span>
+            </span>
             <span className="block">Marketing at Scale</span>
           </h1>
           <p className="mt-6 text-gray-600 text-lg">Generate word of mouth on social media in minutes!</p>
