@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 
 export default function Hero() {
   return (
@@ -12,9 +13,7 @@ export default function Hero() {
           <p className="mt-6 text-gray-600 text-lg">Generate word of mouth on social media in minutes!</p>
 
           <div className="mt-8 flex items-center gap-6">
-            <button className="flex items-center gap-3 bg-gray-800 text-white px-6 py-3 rounded-full">
-              Get Started <span className="ml-2">→</span>
-            </button>
+            <Button>Get Started</Button>
             <img src="/opa-assets/arrow-doodle.png" alt="arrow doodle" className="h-20" />
           </div>
 
