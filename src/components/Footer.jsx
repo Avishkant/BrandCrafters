@@ -5,7 +5,7 @@ import linkedin from '../assets/react.svg'
 
 export default function Footer(){
   return (
-  <footer className="bg-[#3f3735] text-gray-200 mt-auto" style={{position: 'relative', left: '50%', transform: 'translateX(-50%)', width: '100vw'}}>
+  <footer className="bg-[#3f3735] text-gray-200 mt-auto" style={{position: 'relative', left: '49%', transform: 'translateX(-50%)', width: '100vw'}}>
       <div className="w-full px-0">
         <div className="max-w-7xl mx-auto px-6 py-16 w-full">
           <div className="flex flex-col lg:flex-row gap-8">
