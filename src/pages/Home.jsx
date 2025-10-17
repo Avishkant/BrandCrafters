@@ -5,9 +5,11 @@ import Brands from '../components/Brands'
 import WhyOpa from '../components/WhyOpa'
 import Discover from '../components/Discover'
 import Execution from '../components/Execution'
+import LiveReport from '../components/LiveReport'
+import Pricing from '../components/Pricing'
 import Footer from '../components/Footer'
 import discoverGraphic from '../assets/discover-graphic_ahjfsk.png'
-
+                 
 export default function Home(){
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -23,6 +25,8 @@ export default function Home(){
   <WhyOpa />
   <Discover />
   <Execution />
+  <LiveReport />
+  <Pricing />
   <Footer />
     </div>
   )
