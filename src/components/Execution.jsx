@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 import graphic from '../assets/discover-graphic_ahjfsk.png'
 import diamond from '../assets/diamond_jwp0xg.png'
 import hustle1 from '../assets/hustle1_fjiqi6.png'
@@ -54,7 +55,7 @@ export default function Execution(){
           </ul>
 
           <div className="mt-8">
-            <button className="bg-gray-800 text-white px-6 py-3 rounded-full">Get Started <span className="ml-2">→</span></button>
+            <Button>Get Started</Button>
           </div>
         </div>
 

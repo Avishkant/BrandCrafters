@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 import c1 from '../assets/client1_bn5uq3.png'
 import c2 from '../assets/client2_vrszgk.png'
 import c3 from '../assets/client3_vcynvz.png'
@@ -42,7 +43,7 @@ export default function Brands(){
       </div>
 
       <div className="flex justify-center mt-6">
-        <button className="bg-gray-800 text-white px-8 py-3 rounded-full flex items-center gap-3">Case Studies <span className="bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center">→</span></button>
+  <Button>Case Studies</Button>
       </div>
     </section>
   )

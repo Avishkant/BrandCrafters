@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Button from './Button'
 import faqImg from '../assets/faq_rvlham.png'
 import diamond from '../assets/diamond_jwp0xg.png'
 
@@ -43,7 +44,7 @@ export default function Faq(){
           </div>
 
           <div className="mt-6">
-            <button className="bg-gray-800 text-white px-6 py-2 rounded-full">More <span className="ml-2">+</span></button>
+            <Button>More</Button>
           </div>
         </div>
 

@@ -14,7 +14,7 @@ export default function Hero() {
 
           <div className="mt-8 flex items-center gap-6">
             <Button>Get Started</Button>
-            <img src="/opa-assets/arrow-doodle.png" alt="arrow doodle" className="h-20" />
+            <img src=".\src\assets\hero-arrow_jiirdh.png" alt="arrow doodle" className="h-20" />
           </div>
 
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-gray-700">

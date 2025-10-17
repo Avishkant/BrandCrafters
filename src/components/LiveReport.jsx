@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 import cards from '../assets/live-report_xjzbow.png'
 import diamond from '../assets/diamond2_ppimiv.png'
 
@@ -39,7 +40,7 @@ export default function LiveReport(){
           </ul>
 
           <div className="mt-8">
-            <button className="bg-gray-800 text-white px-6 py-3 rounded-full">Get Started <span className="ml-2">→</span></button>
+            <Button>Get Started</Button>
           </div>
         </div>
 

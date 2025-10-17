@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import Button from './Button'
 import why from '../assets/why-opa_uvwrqx.png'
 import dropImg from '../assets/diamond_jwp0xg.png'
 import Bubble from './Bubble'
@@ -54,7 +55,7 @@ export default function WhyOpa(){
           <h3 className="text-4xl font-medium text-gray-800">With OPA</h3>
           <p className="mt-4 text-gray-600">You only have to focus on the important tasks like - setting campaign guidelines, selecting influencers and analyzing performance. Rest is taken care by OPA.</p>
           <div className="mt-6">
-            <button className="bg-gray-800 text-white px-6 py-3 rounded-full">Get Started <span className="ml-2">→</span></button>
+            <Button>Get Started</Button>
           </div>
         </div>
 

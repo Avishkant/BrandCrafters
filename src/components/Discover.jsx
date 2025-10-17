@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import Button from './Button'
 import img1 from '../assets/discover1_mfunos.png'
 import img2 from '../assets/discover2_aoabxg.png'
 import img3 from '../assets/discover3_qrh3lz.png'
@@ -60,7 +61,7 @@ export default function Discover(){
           </ul>
 
           <div className="mt-8">
-            <button className="bg-gray-800 text-white px-6 py-3 rounded-full">Get Started <span className="ml-2">→</span></button>
+            <Button>Get Started</Button>
           </div>
         </div>
 
