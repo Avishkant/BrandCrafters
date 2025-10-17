@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Nav() {
   return (
-    <header className="w-full bg-transparent py-6">
-      <div className="container mx-auto px-6 flex items-center justify-between">
+    <header className="w-full bg-transparent sticky top-0 z-50 backdrop-blur-sm">
+      <div className="container mx-auto px-6 flex items-center justify-between py-4">
         <div className="logo text-2xl font-bold text-gray-800">OPA</div>
 
         <nav className="hidden md:flex gap-8 text-gray-600">

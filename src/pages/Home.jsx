@@ -7,12 +7,12 @@ import Discover from '../components/Discover'
 import Execution from '../components/Execution'
 import LiveReport from '../components/LiveReport'
 import Pricing from '../components/Pricing'
-import Footer from '../components/Footer'
+import Faq from '../components/Faq'
 import discoverGraphic from '../assets/discover-graphic_ahjfsk.png'
                  
 export default function Home(){
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+  <div className="min-h-screen bg-white relative overflow-hidden flex flex-col">
       {/* background bubble graphic */}
       {/* <img src={discoverGraphic}
         alt="bg-bubble"
@@ -27,7 +27,7 @@ export default function Home(){
   <Execution />
   <LiveReport />
   <Pricing />
-  <Footer />
+  <Faq />
     </div>
   )
 }
