@@ -8,25 +8,42 @@ export default function Discover() {
   const refs = [useRef(null), useRef(null), useRef(null)]
 
   useEffect(() => {
-    const factors = [0, 0.4, 0.8] // Stronger parallax movement for 2 & 3
-    let currentY = window.scrollY
+    let rafId = null
+    const startScroll = window.scrollY
+
+    // Stronger parallax movement factors
+    const factors = [0, 0.25, 0.4] // discover1 static, discover2 & 3 move noticeably
 
     const update = () => {
-      const scrollY = window.scrollY
-      const delta = scrollY - currentY
-      currentY += delta * 0.08 // smooth easing (lower = smoother)
+      const delta = window.scrollY - startScroll
 
       refs.forEach((r, i) => {
         const el = r.current
         if (!el) return
-        const offset = currentY * factors[i] * -1 // parallax up on scroll
+
+        const direction = -1 // opposite to scroll (parallax)
+        const offset = delta * factors[i] * direction
+
         el.style.transform = `translateY(${offset}px)`
+        el.style.willChange = 'transform'
       })
 
-      requestAnimationFrame(update)
+      rafId = null
     }
 
-    requestAnimationFrame(update)
+    const onScroll = () => {
+      if (rafId == null) rafId = requestAnimationFrame(update)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    update()
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
@@ -77,7 +94,7 @@ export default function Discover() {
         {/* RIGHT SIDE IMAGES */}
         <div className="lg:w-1/2 relative flex justify-center">
           <div className="relative" style={{ width: '560px', height: '550px' }}>
-            {/* discover1 */}
+            {/* discover1 — static */}
             <div
               ref={refs[0]}
               className="absolute rounded-2xl overflow-hidden shadow-xl"
@@ -89,33 +106,41 @@ export default function Discover() {
                 zIndex: 30,
               }}
             >
-              <img src={img1} alt="person-1" className="w-full h-full object-cover block" />
+              <img
+                src={img1}
+                alt="person-1"
+                className="w-full h-full object-cover block"
+              />
             </div>
 
-            {/* discover2 */}
+            {/* discover2 — parallax */}
             <div
               ref={refs[1]}
               className="absolute rounded-2xl overflow-hidden shadow-xl"
               style={{
-                left: '160px',
-                top: '80px',
+                left: '150px',
+                top: '70px',
                 width: '200px',
                 height: '360px',
                 zIndex: 20,
               }}
             >
-              <img src={img2} alt="person-2" className="w-full h-full object-cover block" />
+              <img
+                src={img2}
+                alt="person-2"
+                className="w-full h-full object-cover block"
+              />
             </div>
 
-            {/* discover3 (moved upward + full height visible) */}
+            {/* discover3 — parallax, larger and not cropped */}
             <div
               ref={refs[2]}
               className="absolute rounded-2xl overflow-hidden shadow-xl bg-white"
               style={{
-                left: '320px',
-                top: '60px', // moved up
+                left: '300px',
+                top: '140px',
                 width: '220px',
-                height: '480px',
+                height: '480px', // taller
                 zIndex: 10,
               }}
             >

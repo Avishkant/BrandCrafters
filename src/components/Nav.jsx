@@ -30,8 +30,8 @@ export default function Nav() {
 
         {/* Center: Nav Links */}
         <nav className="hidden md:flex items-center gap-8 text-gray-600 text-sm font-medium">
-          <a className="hover:text-gray-900 transition-colors" href="#">Pricing</a>
-          <a className="hover:text-gray-900 transition-colors" href="#">Case Studies</a>
+          <a className="hover:text-gray-900 transition-colors" href="/">Pricing</a>
+          <a className="hover:text-gray-900 transition-colors" href="/case-studies">Case Studies</a>
           <a className="hover:text-gray-900 transition-colors" href="#">Blog</a>
           <a className="hover:text-gray-900 transition-colors" href="#">Contact</a>
           <a className="hover:text-gray-900 transition-colors" href="#">Features</a>
