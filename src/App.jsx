@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import CaseStudies from "./pages/CaseStudies";
 import ReadMore from "./pages/ReadMore";
 import Blog from "./pages/Blog";
+import Post from "./pages/Post";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,6 +23,25 @@ function App() {
     return (
       <>
         <Blog />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === "/contact") {
+    return (
+      <>
+        <Contact />
+        <Footer />
+      </>
+    );
+  }
+
+  // blog post pages like /blog/post-1
+  if (path.startsWith("/blog/") && path !== "/blog") {
+    return (
+      <>
+        <Post />
         <Footer />
       </>
     );

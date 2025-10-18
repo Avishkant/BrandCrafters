@@ -42,7 +42,7 @@ export default function Nav() {
           <a className="hover:text-gray-900 transition-colors" href="/blog">
             Blog
           </a>
-          <a className="hover:text-gray-900 transition-colors" href="#">
+          <a className="hover:text-gray-900 transition-colors" href="/contact">
             Contact
           </a>
           <a className="hover:text-gray-900 transition-colors" href="#">
