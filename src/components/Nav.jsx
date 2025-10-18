@@ -25,12 +25,12 @@ export default function Nav() {
       <div className="w-full max-w-6xl px-6 flex items-center justify-between">
         {/* Left: Logo */}
         <div className="text-xl font-bold text-gray-800 tracking-tight">
-          OPA
+          <a href="/">OPA</a>
         </div>
 
         {/* Center: Nav Links */}
         <nav className="hidden md:flex items-center gap-8 text-gray-600 text-sm font-medium">
-          <a className="hover:text-gray-900 transition-colors" href="/">
+          <a className="hover:text-gray-900 transition-colors" href="/#pricing">
             Pricing
           </a>
           <a
@@ -45,7 +45,10 @@ export default function Nav() {
           <a className="hover:text-gray-900 transition-colors" href="/contact">
             Contact
           </a>
-          <a className="hover:text-gray-900 transition-colors" href="#">
+          <a
+            className="hover:text-gray-900 transition-colors"
+            href="/#discover"
+          >
             Features
           </a>
           <a className="hover:text-gray-900 transition-colors" href="#">
