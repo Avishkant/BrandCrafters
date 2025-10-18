@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY || window.pageYOffset
-      setScrolled(y > 40)
-    }
+      const y = window.scrollY || window.pageYOffset;
+      setScrolled(y > 40);
+    };
 
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-3'
+        scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-3"
       }`}
-      style={{ transform: scrolled ? 'translateY(0)' : 'translateY(4px)' }}
+      style={{ transform: scrolled ? "translateY(0)" : "translateY(4px)" }}
     >
       {/* Constrain width + center content */}
       <div className="w-full max-w-6xl px-6 flex items-center justify-between">
@@ -30,12 +30,27 @@ export default function Nav() {
 
         {/* Center: Nav Links */}
         <nav className="hidden md:flex items-center gap-8 text-gray-600 text-sm font-medium">
-          <a className="hover:text-gray-900 transition-colors" href="/">Pricing</a>
-          <a className="hover:text-gray-900 transition-colors" href="/case-studies">Case Studies</a>
-          <a className="hover:text-gray-900 transition-colors" href="#">Blog</a>
-          <a className="hover:text-gray-900 transition-colors" href="#">Contact</a>
-          <a className="hover:text-gray-900 transition-colors" href="#">Features</a>
-          <a className="hover:text-gray-900 transition-colors" href="#">About</a>
+          <a className="hover:text-gray-900 transition-colors" href="/">
+            Pricing
+          </a>
+          <a
+            className="hover:text-gray-900 transition-colors"
+            href="/case-studies"
+          >
+            Case Studies
+          </a>
+          <a className="hover:text-gray-900 transition-colors" href="/blog">
+            Blog
+          </a>
+          <a className="hover:text-gray-900 transition-colors" href="#">
+            Contact
+          </a>
+          <a className="hover:text-gray-900 transition-colors" href="#">
+            Features
+          </a>
+          <a className="hover:text-gray-900 transition-colors" href="#">
+            About
+          </a>
         </nav>
 
         {/* Right: Buttons */}
@@ -49,5 +64,5 @@ export default function Nav() {
         </div>
       </div>
     </header>
-  )
+  );
 }
